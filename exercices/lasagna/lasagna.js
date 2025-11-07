@@ -37,7 +37,7 @@ export const PREPARATION_MINUTES_PER_LAYER = 2;
 export const EXPECTED_MINUTES_IN_OVEN = 40;
 
 let cuisson = remainingMinutesInOven(30);
-let layer =  preparationTimeInMinutes(2);
+let layer = preparationTimeInMinutes(2);
 let total = totalTimeInMinutes(layer,cuisson);
 console.log(total);
 /**
