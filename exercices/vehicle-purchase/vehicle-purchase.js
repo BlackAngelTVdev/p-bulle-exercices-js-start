@@ -3,6 +3,11 @@
 // The line above enables type checking for this file. Various IDEs interpret
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
+export const kind = 'car';
+export const option1 = 'Wuling Hongguang';
+export const option2 = 'Toyota Corolla';
+export const originalPrice = 1000;
+export const age = 3;
 
 /**
  * Determines whether or not you need a license to operate a certain kind of vehicle.
@@ -11,7 +16,7 @@
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  throw new Error('Remove this line and implement the function');
+  return kind == 'car' || kind == 'truck' ? true : false;
 }
 
 /**
@@ -23,7 +28,9 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export function chooseVehicle(option1, option2) {
-  throw new Error('Remove this line and implement the function');
+  const enplus = ' is clearly the better choice.'
+  let choise = option1 < option2 ? option1 : option2;
+  return choise + enplus;
 }
 
 /**
@@ -35,5 +42,5 @@ export function chooseVehicle(option1, option2) {
  * @returns {number} expected resell price in the dealership
  */
 export function calculateResellPrice(originalPrice, age) {
-  throw new Error('Remove this line and implement the function');
+  return age < 3 ? originalPrice * 80/100 : (age > 10 ? originalPrice * 50/100 : originalPrice * 70/100);
 }
