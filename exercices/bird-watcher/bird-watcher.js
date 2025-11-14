@@ -4,6 +4,9 @@
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
 
+export const birdsPerDay = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1];
+export const week = 2;
+
 /**
  * Calculates the total bird count.
  *
@@ -11,7 +14,11 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  throw new Error('Remove this line and implement the function');
+  let total = 0;
+  for (let i = 0; i < birdsPerDay.length; i++) 
+    total += birdsPerDay[i];
+
+  return total;
 }
 
 /**
@@ -22,7 +29,16 @@ export function totalBirdCount(birdsPerDay) {
  * @returns {number} birds counted in the given week
  */
 export function birdsInWeek(birdsPerDay, week) {
-  throw new Error('Remove this line and implement the function');
+  const startIndex = (week - 1) * 7;
+  const endIndex = week * 7;
+
+  let total = 0;
+
+  for (let i = startIndex; i < endIndex && i < birdsPerDay.length; i++) {
+    total += birdsPerDay[i];
+  }
+
+  return total;
 }
 
 /**
@@ -33,5 +49,8 @@ export function birdsInWeek(birdsPerDay, week) {
  * @returns {void} should not return anything
  */
 export function fixBirdCountLog(birdsPerDay) {
-  throw new Error('Remove this line and implement the function');
+
+  for (let i = 0; i < birdsPerDay.length; i+=2) 
+    birdsPerDay[i]++;
+
 }
