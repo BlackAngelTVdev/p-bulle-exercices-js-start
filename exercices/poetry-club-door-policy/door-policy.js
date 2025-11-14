@@ -38,15 +38,10 @@ export function frontDoorResponse(line) {
  * @returns {string} the front door password
  */
 export function frontDoorPassword(word) {
-  let End = ""
-  word.split('').forEach((k, W) => {
-    if (W == 0) {
-      End += k.toUpperCase();
-    } else {
-      End += k.toLowerCase();
-    }
-  });
-  return End
+
+  const firstLetter = word.charAt(0).toUpperCase(); 
+  const restOfString = word.slice(1).toLowerCase();
+  return firstLetter + restOfString;
 }
 
 /**
