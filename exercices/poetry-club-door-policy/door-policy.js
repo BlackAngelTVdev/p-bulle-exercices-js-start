@@ -27,7 +27,7 @@
  * @returns {string}
  */
 export function frontDoorResponse(line) {
-  return line.split('')[0];
+  return line[0];
 }
 
 /**
