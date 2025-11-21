@@ -12,20 +12,19 @@
  */
 export function timeToMixJuice(name) {
   switch (name) {
-    case 'Pure Strawberry Joy':
-      return 0.5; 
-    case 'Energizer':
-    case 'Green Garden': 
+    case "Pure Strawberry Joy":
+      return 0.5;
+    case "Energizer":
+    case "Green Garden":
       return 1.5;
-    case 'Tropical Island':
+    case "Tropical Island":
       return 3;
-    case 'All or Nothing':
+    case "All or Nothing":
       return 5;
-    default: 
+    default:
       return 2.5;
   }
 }
-
 
 /**
  * Calculates the number of limes that need to be cut
@@ -47,19 +46,17 @@ export function limesToCut(wedgesNeeded, limes) {
     const limeSize = limes[i];
     let wedgesFromCurrentLime = 0;
 
-
     switch (limeSize) {
-      case 'small':
+      case "small":
         wedgesFromCurrentLime = 6;
         break;
-      case 'medium':
+      case "medium":
         wedgesFromCurrentLime = 8;
         break;
-      case 'large':
+      case "large":
         wedgesFromCurrentLime = 10;
         break;
       default:
-
         break;
     }
 
@@ -75,7 +72,8 @@ export function limesToCut(wedgesNeeded, limes) {
 }
 
 export const timeLeft = 5;
-export const orders = ['Energizer', 'All or Nothing', 'Green Garden']
+export const orders = ["Energizer", "All or Nothing", "Green Garden"];
+
 /**
  * Determines which juices still need to be prepared after the end of the shift.
  *
@@ -84,21 +82,23 @@ export const orders = ['Energizer', 'All or Nothing', 'Green Garden']
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
- while (timeLeft > 0 && orders.length > 0) {
+  // Fix 1: Create a copy of the orders array to prevent mutation 
+  // of the original input, which affects other tests.
+  let remaining = [...orders];
 
-    const nextJuice = orders[0];
+  while (timeLeft > 0 && remaining.length > 0) {
+    const nextJuice = remaining[0];
     const mixTime = timeToMixJuice(nextJuice);
-
-
+    remaining.shift(); 
+    
     if (timeLeft >= mixTime) {
 
       timeLeft -= mixTime;
-      orders.shift(); 
     } else {
 
       break; 
     }
   }
 
-  return orders;
+  return remaining;
 }
