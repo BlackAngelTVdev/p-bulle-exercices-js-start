@@ -39,7 +39,7 @@ export function frontDoorResponse(line) {
  */
 export function frontDoorPassword(word) {
 
-  const firstLetter = word.charAt(0).toUpperCase(); 
+  const firstLetter = word[0].toUpperCase(); 
   const restOfString = word.slice(1).toLowerCase();
   return firstLetter + restOfString;
 }
@@ -52,7 +52,7 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-  return line.trim().split('').reverse()[0]
+  return line.trim().slice(-1)
 }
 /**
  * Format the password for the back door, given the response
