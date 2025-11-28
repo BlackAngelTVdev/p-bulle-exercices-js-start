@@ -64,7 +64,5 @@ export function extendRouteInformation(information, additional) {
 export function separateTimeOfArrival(information) {
 
   const { timeOfArrival, ...restOfInfo } = information;
-
-  
   return [timeOfArrival, restOfInfo];
 }
