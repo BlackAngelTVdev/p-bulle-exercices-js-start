@@ -10,8 +10,8 @@
  * @param {...number} ids
  * @returns {number[]} wagon ids
  */
-export function getListOfWagons(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
-  throw new Error('Remove this line and implement the function');
+export function getListOfWagons(...ids) {
+  return ids;
 }
 
 /**
@@ -21,7 +21,10 @@ export function getListOfWagons(a, b, c, d, e, f, g, h, i, j, k, l, m, n) {
  * @returns {number[]} reordered list of wagons
  */
 export function fixListOfWagons(ids) {
-  throw new Error('Remove this line and implement the function');
+  const idsArray = [...ids];
+  const firstTwo = idsArray.slice(0, 2);
+  const remaining = idsArray.slice(2);
+  return [...remaining, ...firstTwo];
 }
 
 /**
@@ -32,9 +35,14 @@ export function fixListOfWagons(ids) {
  * @returns {number[]} corrected list of wagons
  */
 export function correctListOfWagons(ids, missingWagons) {
-  throw new Error('Remove this line and implement the function');
-}
+  const idsArray = [...ids];
+  const missingWagonsArray = [...missingWagons];
 
+  const firstElement = idsArray.slice(0, 1);
+  const restOfIds = idsArray.slice(1);
+
+  return [...firstElement, ...missingWagonsArray, ...restOfIds];
+}
 /**
  * Extend route information by adding another object
  *
@@ -43,8 +51,9 @@ export function correctListOfWagons(ids, missingWagons) {
  * @returns {Record<string, string>} extended route information
  */
 export function extendRouteInformation(information, additional) {
-  throw new Error('Remove this line and implement the function');
+  return {...information , ...additional}
 }
+
 
 /**
  * Separate arrival time from the route information object
@@ -53,5 +62,9 @@ export function extendRouteInformation(information, additional) {
  * @returns {[string, Record<string, string>]} array with arrival time and object without arrival time
  */
 export function separateTimeOfArrival(information) {
-  throw new Error('Remove this line and implement the function');
+
+  const { timeOfArrival, ...restOfInfo } = information;
+
+  
+  return [timeOfArrival, restOfInfo];
 }
