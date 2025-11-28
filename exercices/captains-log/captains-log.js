@@ -18,8 +18,8 @@ export function randomShipRegistryNumber() {
 export function randomStardate() {
     const min = 41000;
     const max = 42000;
-    let stardate = Math.random() * (max - min) + min;
-    return stardate;
+     
+    return  Math.random() * (max - min) + min;
 }
 
 /**
