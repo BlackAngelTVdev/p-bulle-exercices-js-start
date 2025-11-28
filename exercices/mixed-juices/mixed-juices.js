@@ -68,7 +68,7 @@ export function limesToCut(wedgesNeeded, limes) {
     }
   }
 
-  // return limesCut;
+  return limesCut;
 }
 
 
