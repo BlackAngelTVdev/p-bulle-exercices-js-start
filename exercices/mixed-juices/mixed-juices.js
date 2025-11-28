@@ -71,8 +71,6 @@ export function limesToCut(wedgesNeeded, limes) {
   return limesCut;
 }
 
-export const timeLeft = 5;
-export const orders = ["Energizer", "All or Nothing", "Green Garden"];
 
 /**
  * Determines which juices still need to be prepared after the end of the shift.
