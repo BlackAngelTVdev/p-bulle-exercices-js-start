@@ -82,8 +82,6 @@ export const orders = ["Energizer", "All or Nothing", "Green Garden"];
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  // Fix 1: Create a copy of the orders array to prevent mutation 
-  // of the original input, which affects other tests.
   let remaining = [...orders];
 
   while (timeLeft > 0 && remaining.length > 0) {
@@ -91,13 +89,11 @@ export function remainingOrders(timeLeft, orders) {
     const mixTime = timeToMixJuice(nextJuice);
     remaining.shift(); 
     
-    if (timeLeft >= mixTime) {
-
+    
+    if (timeLeft > 0) {
       timeLeft -= mixTime;
-    } else {
-
-      break; 
-    }
+    } 
+    // pas le choix de faire que si il y a encore du temps il faut soustraire
   }
 
   return remaining;
