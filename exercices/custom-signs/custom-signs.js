@@ -26,16 +26,16 @@ export function buildSign(occasion, name) {
  */
 
 export function buildBirthdaySign(age) {
-  let message = "";
-  if (age < 50)  
-  {
-    message = `Happy Birthday! What a young fellow you are.`
-  }
+  let debut = "Happy Birthday! What a ";
+  let fin= " you are."
+  let add
   if (age >= 50)
   {
-    message = `Happy Birthday! What a mature fellow you are.`
+    add = `mature fellow`
+  }else {
+    add = `young fellow`
   }
-  return message;
+  return debut + add + fin;
 }
 
 /**
