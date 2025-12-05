@@ -11,14 +11,8 @@
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  if (kind == "car" || kind == "truck")
-  {
-    return (kind == "car" || kind == "truck")
-  }else {
-    return kind == "car"|| kind == "truck";
-  }
+  return kind == "car" || kind == "truck";
 }
-
 /**
  * Helps choosing between two options by recommending the one that
  * comes first in dictionary order.
@@ -29,13 +23,14 @@ export function needsLicense(kind) {
  */
 export function chooseVehicle(option1, option2) {
   const enplus = " is clearly the better choice.";
-  if (option1 < option2)
-  {
-    return option1 + enplus
+  let choise;
+
+  if (option1 < option2) {
+    choise = option1;
+  } else {
+    choise = option2;
   }
-  else{
-    return option2 + enplus
-  }
+  return choise + enplus;
 }
 
 /**

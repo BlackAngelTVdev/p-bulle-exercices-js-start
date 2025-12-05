@@ -58,9 +58,9 @@ export function updateScore(scoreBoard, player, points) {
  */
 export function applyMondayBonus(scoreBoard) {
   for (const player in scoreBoard) {
-    if (Object.hasOwnProperty.call(scoreBoard, player)) {
+    // if (Object.hasOwnProperty.call(scoreBoard, player)) {
       scoreBoard[player] += 100;
-    }
+    // }
   }
   return scoreBoard;
 }
