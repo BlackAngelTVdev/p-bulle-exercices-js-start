@@ -34,7 +34,6 @@ export function needsLicense(kind) {
  */
 export function chooseVehicle(option1, option2) {
   const enplus = " is clearly the better choice.";
-  let choise = option1 < option2 ? option1 : option2;
   if (option1 < option2)
   {
     return option1 + enplus
