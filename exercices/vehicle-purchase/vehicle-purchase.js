@@ -16,7 +16,12 @@ export const age = 3;
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  return kind == "car" || kind == "truck" ? true : false;
+  if (kind == "car" || kind == "truck")
+  {
+    return (kind == "car" || kind == "truck")
+  }else {
+    return kind == "car"|| kind == "truck";
+  }
 }
 
 /**
