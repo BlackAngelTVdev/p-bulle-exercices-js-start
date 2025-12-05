@@ -3,11 +3,6 @@
 // The line above enables type checking for this file. Various IDEs interpret
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
-export const kind = "car";
-export const option1 = "Wuling Hongguang";
-export const option2 = "Toyota Corolla";
-export const originalPrice = 1000;
-export const age = 3;
 
 /**
  * Determines whether or not you need a license to operate a certain kind of vehicle.
