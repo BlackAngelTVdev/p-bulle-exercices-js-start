@@ -15,13 +15,13 @@
  */
 export function printBadge(id, name, department) {
   let rest = "";
-  const departmentText =
-    department === null ? "OWNER" : department.toUpperCase();
+  const departmentText = department === null ? "OWNER" : department.toUpperCase();
+  const midle = `${name} - ${departmentText}`
   if (id === null) {
-    rest = `${name} - ${departmentText}`;
+    rest = midle;
   } else
   {
-    rest = `[${id}] ${name} - ${departmentText}`;
+    rest = `[${id}] ${midle}`;
   }
 
   return rest;
