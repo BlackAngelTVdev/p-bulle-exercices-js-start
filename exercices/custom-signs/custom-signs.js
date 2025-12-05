@@ -64,5 +64,5 @@ Class of ${year}`;
 
 export function costOf(sign, currency) {
   const totalCost = 20 + sign.length * 2;
-  return `Your sign costs ${totalCost}.00 ${currency}.`;
+  return `Your sign costs ${totalCost.toFixed(2)} ${currency}.`;
 }
