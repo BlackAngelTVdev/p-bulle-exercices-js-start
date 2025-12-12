@@ -22,10 +22,7 @@ export const age = (planet, seconds) => {
   if (!orbitalPeriod) {
     throw new Error("not a planet"); 
   }
-
   const ageInEarthYears = seconds / SECONDS_PER_EARTH_YEAR;
-
   const ageOnPlanet = ageInEarthYears / orbitalPeriod;
-
   return Math.round(ageOnPlanet * 100) / 100;
 };
