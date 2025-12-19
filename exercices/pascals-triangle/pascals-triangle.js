@@ -24,5 +24,5 @@ export const rows = (count) => {
     triangle.push(row);
   }
 
-  return triangle;
+  // return triangle;
 };
