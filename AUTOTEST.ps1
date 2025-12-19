@@ -8,7 +8,6 @@ if (-not $dossier) {
 
 Write-Host "🧪 Lancement des tests Jest pour : $dossier" -ForegroundColor Cyan
 
-# On lance npm test. -- est utilisé pour passer l'argument directement à Jest
 npm test -- $dossier
 
 if ($LASTEXITCODE -eq 0) {
