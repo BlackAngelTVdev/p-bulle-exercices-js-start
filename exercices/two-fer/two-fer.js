@@ -3,6 +3,6 @@
 // convenience to get you started writing code faster.
 //
 
-export const twoFer = () => {
-  throw new Error('Remove this line and implement the function');
+export const twoFer = (nom = "you") => {
+  return `One for ${nom}, one for me.`;
 };
