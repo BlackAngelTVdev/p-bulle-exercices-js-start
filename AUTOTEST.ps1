@@ -11,24 +11,24 @@ if (-not $dossier) {
 
 Write-Host "🧪 Lancement des tests Jest pour : $dossier" -ForegroundColor Cyan
 
-# Lancement de npm test
+
 npm test -- $dossier
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ Tests au vert !" -ForegroundColor Green
     
-    # --- PARTIE EXCEL ---
+
     $cheminFichier = "Suivi_Projet.xlsx"
     $dateActuelle = Get-Date -Format "dd/MM/yyyy HH:mm"
     
     $nouvelleLigne = [PSCustomObject]@{
-        ID          = "s-$dossier"
+        Exo          = "$dossier"
         Date        = $dateActuelle
-        "Durée (min)" = $temps
-        Statut      = "Terminé"
+        "Duree (min)" = $temps
+        Statut      = "Termine"
     }
 
-    # Tentative d'écriture Excel sans bloc Try complexe
+
     $nouvelleLigne | Export-Excel -Path $cheminFichier -Append -AutoSize -ErrorAction SilentlyContinue
     if ($?) { 
         Write-Host "📊 Ligne ajoutée au suivi Excel." -ForegroundColor Yellow 
@@ -36,7 +36,6 @@ if ($LASTEXITCODE -eq 0) {
         Write-Host "⚠️ Erreur Excel : Ferme le fichier !" -ForegroundColor Red 
     }
 
-    # --- PARTIE GIT ---
     if ($push -eq $true) {
         Write-Host "📡 Envoi sur Git..." -ForegroundColor Cyan
         git add .
